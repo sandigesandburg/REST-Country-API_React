@@ -1,12 +1,14 @@
 {
   "name": "rest-country-api_react",
+  "homepage": "https://sandigesandburg.github.io/rest-country-api_react/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack serve --config webpack.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "MIT",
