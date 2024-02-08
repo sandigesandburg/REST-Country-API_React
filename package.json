@@ -1,6 +1,6 @@
 {
-  "name": "rest-country-api_react",
-  "homepage": "https://sandigesandburg.github.io/rest-country-api_react/",
+  "name": "rest-country-api-react",
+  "homepage": "https://sandigesandburg.github.io/rest-country-api-react/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "6.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.21.3",
