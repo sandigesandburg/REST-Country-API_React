@@ -1,12 +1,13 @@
 'use strict';
 
-import { CountryData } from '../countryData/countryData';
-import { SearchField } from '../components/search';
+import { CountryCollection } from '../countryRESTAPI/countryCollection';
+import { CountryTile } from '../components/countryTile';
+import { SearchField } from '../components/searchField';
 import { Select } from '../components/select';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import './Home.css';
+import styles from '../styles/pages/Home.module.css';
 
 export const Home = (props) => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const Home = (props) => {
   const defaultSelection = sessionStorage.getItem('selectedRegion');
   const [name, setName] = useState(defaultSearch);
   const [region, setRegion] = useState(defaultSelection);
-  const [data, setData] = useState(new CountryData([]));
+  const [data, setData] = useState(new CountryCollection([]));
 
   useEffect(() => {
     const key = 'scrollPosition';
@@ -65,9 +66,24 @@ export const Home = (props) => {
     navigate('/details' + '?' + urlParams.toString());
   }
 
+  const countryTiles = data.map((country) => {
+    return (
+      <CountryTile
+        key={country.commonName}
+        capital={country.capital}
+        flagSrc={country.flagSrc}
+        flagAlt={country.flagAlt}
+        name={country.commonName}
+        population={country.population}
+        region={country.region}
+        onClick={() => goToDetails(country.commonName)}
+      />
+    );
+  });
+
   return (
     <main>
-      <div className='filter'>
+      <div className={styles.filter}>
         <SearchField
           defaultValue={sessionStorage.getItem('searchedValue')}
           onClick={onClick}
@@ -75,15 +91,13 @@ export const Home = (props) => {
           placeholder='Search for a country...'
         />
         <Select
-          defaultValue={region}
+          defaultValue='region'
           displayName='Filter by Region'
           onSelect={(selection) => onSelect(selection)}
           options={['Africa', 'America', 'Asia', 'Europe', 'Oceania']}
         />
       </div>
-      <main className='country-container'>
-        {data.createTiles((data) => goToDetails(data))}
-      </main>
+      <main className={styles.countryContainer}>{countryTiles}</main>
     </main>
   );
 };

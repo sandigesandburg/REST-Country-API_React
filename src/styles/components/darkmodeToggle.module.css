@@ -1,0 +1,25 @@
+.darkmodeToggle {
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  gap: 10px;
+  justify-content: space-between;
+  margin-right: var(--margin-right);
+  text-shadow: var(--text-shadow);
+}
+
+.icon {
+  filter: drop-shadow(0px 0px 5px var(--clr-light));
+}
+
+.darkmodeToggle:hover {
+  text-shadow: 0px 0px 15px var(--foreground);
+
+  .icon {
+    filter: drop-shadow(0px 0px 7px var(--foreground));
+  }
+}

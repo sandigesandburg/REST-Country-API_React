@@ -1,6 +1,6 @@
 'use strict';
 
-async function fetchApi(url) {
+export async function fetchApi(url) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -12,5 +12,3 @@ async function fetchApi(url) {
     return [];
   }
 }
-
-export { fetchApi };

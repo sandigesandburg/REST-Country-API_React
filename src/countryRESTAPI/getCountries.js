@@ -1,11 +1,11 @@
 'use strict';
-'use strict';
 
 import { fetchApi } from './fetchApi';
+import { createDataCollection } from './createCountryCollection';
 
 const DOMAIN_NAME = 'https://restcountries.com/v3.1';
 
-async function getDataOfCountries() {
+export async function getCountries() {
   const endpoint = '/all/';
   const dataFields =
     '?fields=name,population,region,capital,flags,' +
@@ -18,7 +18,5 @@ async function getDataOfCountries() {
   });
 
   data.sort((a, b) => a.name.common > b.name.common);
-  return data;
+  return createDataCollection(data);
 }
-
-export { getDataOfCountries };

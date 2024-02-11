@@ -1,0 +1,23 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 48px;
+  row-gap: 50px;
+}
+
+.countryContainer {
+  display: grid;
+  gap: 74px 40px;
+  grid-template-columns: repeat(auto-fill, 270px);
+  justify-content: space-between;
+  margin-left: var(--margin-left);
+  margin-right: var(--margin-right);
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 612px) {
+  .country-container {
+    justify-content: center;
+  }
+}

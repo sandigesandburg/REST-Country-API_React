@@ -1,17 +1,17 @@
 'use strict';
 
-import { DarkModeButton } from '../components/darkMode';
+import { DarkModeToggle } from '../components/darkmodeToggle';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 
-import './Layout.css';
+import styles from '../styles/pages/Layout.module.css';
 
 export const Layout = () => {
   return (
     <>
-      <header className='banner'>
-        <h1 className='title'>Where in the world?</h1>
-        <DarkModeButton />
+      <header className={styles.banner}>
+        <h1 className={styles.title}>Where in the world?</h1>
+        <DarkModeToggle />
       </header>
       <Outlet />
     </>

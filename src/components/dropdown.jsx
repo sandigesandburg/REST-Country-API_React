@@ -2,42 +2,36 @@
 
 import React, { useState } from 'react';
 
+import styles from '../styles/components/dropdown.module.css';
+
 export const Dropdown = (props) => {
   const [display, setDisplay] = useState('none');
   const [angle, setAngle] = useState(0);
 
-  const displayName = props.displayName;
-
   function toggleMenu() {
-    if (display == 'none') {
-      setDisplay('block');
-    } else {
-      setDisplay('none');
-    }
+    const state = display === 'none' ? 'block' : 'none';
+    setDisplay(state);
   }
 
   function toggleCaret() {
-    if (angle == 0) {
-      setAngle(180);
-    } else {
-      setAngle(0);
-    }
+    const state = angle === 0 ? 180 : 0;
+    setAngle(state);
   }
 
   return (
     <div
-      className='dropdown'
+      className={styles.dropdown}
       onClick={() => {
         toggleMenu();
         toggleCaret();
       }}
     >
-      <span className='selected'>{displayName}</span>
+      <span className={styles.selected}>{props.displayName}</span>
       <div
-        className='caret'
+        className={styles.caret}
         style={{ transform: `rotate(${angle + 45}deg)` }}
       ></div>
-      <ul className='menu' style={{ display: display }}>
+      <ul className={styles.menu} style={{ display: display }}>
         {props.children}
       </ul>
     </div>

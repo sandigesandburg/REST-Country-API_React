@@ -1,0 +1,17 @@
+.option {
+  margin-left: 0px;
+  padding: 4px;
+  padding-left: 25px;
+}
+
+.option:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.option:first-child {
+  margin-top: 12px;
+}
+
+.option:last-child {
+  margin-bottom: 12px;
+}

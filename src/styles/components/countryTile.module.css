@@ -1,0 +1,43 @@
+.countryTile {
+  background: var(--element-background);
+  border: none;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+  height: 335px;
+  width: 270px;
+}
+
+.countryTile:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.countryFlag {
+  border-bottom: 1px solid var(--flag-border);
+  border-radius: 6px 6px 0 0;
+  height: 160px;
+  width: 100%;
+}
+
+.details {
+  margin: 20px 25px;
+}
+
+.countryName {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.property {
+  display: flex;
+}
+
+.property-name {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.property-value {
+  font-size: 14px;
+  margin-left: 5px;
+}

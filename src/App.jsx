@@ -1,20 +1,19 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CountryData } from './countryData/countryData';
-import { getDataOfCountries } from './countryRESTAPI/getDataOfCountries';
+import { CountryCollection } from './countryRESTAPI/countryCollection';
+import { getCountries } from './countryRESTAPI/getCountries';
 import { Layout } from './pages/Layout';
 import { Details } from './pages/Details';
 import { Home } from './pages/Home';
 import React, { useEffect, useState } from 'react';
 
-import './styles.css';
+import './styles/styles.css';
 
 const App = () => {
-  const [data, setData] = useState(new CountryData());
+  const [data, setData] = useState(new CountryCollection());
 
   useEffect(() => {
     async function getData() {
-      const countryData = await getDataOfCountries();
-      setData(new CountryData(countryData));
+      setData(await getCountries());
     }
     getData();
   }, []);

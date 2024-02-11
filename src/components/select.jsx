@@ -3,6 +3,8 @@
 import { Dropdown } from './dropdown';
 import React, { useState } from 'react';
 
+import styles from '../styles/components/select.module.css';
+
 export const Select = (props) => {
   const [selection, setSelection] = useState(props.defaultValue);
 
@@ -16,6 +18,7 @@ export const Select = (props) => {
   const options = props.options.map((option) => {
     return (
       <li
+        className={styles.option}
         key={option}
         onClick={(event) => changeSelection(event)}
         style={{ fontWeight: option === selection ? 800 : 1 }}

@@ -1,0 +1,29 @@
+.returnButton {
+  align-items: center;
+  background: var(--element-background);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  color: var(--foreground);
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  gap: 12px;
+  height: 40px;
+  justify-content: center;
+  margin-top: 80px;
+  margin-left: var(--margin-left);
+  margin-bottom: 80px;
+  margin-right: 0px;
+  width: 140px;
+}
+
+.returnButton:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+@media screen and (max-width: 612px) {
+  .returnButton {
+    margin-top: 50px;
+  }
+}

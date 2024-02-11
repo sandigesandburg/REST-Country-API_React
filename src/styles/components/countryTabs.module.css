@@ -1,0 +1,52 @@
+.borderCountries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 0;
+  margin-top: 61px;
+}
+
+.propertyName {
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  font-weight: 300;
+  height: 30px;
+  width: 140px;
+}
+
+.tabContainer {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  justify-content: flex-start;
+  margin: 0;
+  width: 500px;
+}
+
+.tab {
+  align-items: center;
+  background-color: var(--element-background);
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  height: 28px;
+  justify-content: center;
+  width: 96px;
+}
+
+.supertab {
+  width: 202px;
+}
+
+.tab:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+@media screen and (max-width: 612px) {
+  .tabContainer {
+    width: 330px;
+  }
+}

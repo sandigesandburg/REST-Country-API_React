@@ -1,0 +1,12 @@
+.property {
+  display: flex;
+  font-size: 14px;
+}
+
+.propertyName {
+  font-weight: 300;
+}
+
+.propertyValue {
+  margin-left: 5px;
+}
